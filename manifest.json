@@ -1,0 +1,34 @@
+{
+  "manifest_version": 3,
+  "name": "Anime download btn",
+  "version": "1.0",
+  "description": "Add download btn in mikan",
+  "icons": {
+    "16": "images/mikan-pic.png",
+    "32": "images/mikan-pic.png",
+    "48": "images/mikan-pic.png",
+    "128": "images/mikan-pic.png"
+  },
+  "content_scripts": [
+    {
+      "js": [
+        "scripts/content.js"
+      ],
+      "css": [
+        "css/style.css"
+      ],
+      "matches": [
+        "https://mikanani.me/*",
+        "http://mikanani.me/*"
+      ]
+    }
+  ],
+  "background": {
+    "service_worker": "service-worker.js",
+    "type": "module"
+  },
+  "host_permissions": [
+    "https://*/",
+    "http://*/"
+  ]
+}
