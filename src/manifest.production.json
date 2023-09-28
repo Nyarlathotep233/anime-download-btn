@@ -1,0 +1,42 @@
+{
+  "name": "订阅 mikan 动画 RSS",
+  "description": "订阅 mikan 动画 RSS",
+  "version": "1.0.0",
+  "manifest_version": 3,
+  "background": {
+    "service_worker": "js/background.js"
+  },
+  "web_accessible_resources": [
+    {
+      "resources": ["images/*"],
+      "matches": ["*://*/*"]
+    }
+  ],
+  "options_page": "options.html",
+  "default_locale": "zh_CN",
+  "permissions": ["storage", "tabs", "cookies", "contextMenus"],
+  "host_permissions": ["https://mikanani.me/*"],
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "/images/mikan-pic.png",
+      "32": "/images/mikan-pic.png",
+      "48": "/images/mikan-pic.png",
+      "128": "/images/mikan-pic.png"
+    }
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://mikanani.me/*"],
+      "js": ["js/vendors.js", "js/content-script.js"],
+      "run_at": "document_end",
+      "all_frames": true
+    }
+  ],
+  "icons": {
+    "16": "/images/mikan-pic.png",
+    "32": "/images/mikan-pic.png",
+    "48": "/images/mikan-pic.png",
+    "128": "/images/mikan-pic.png"
+  }
+}

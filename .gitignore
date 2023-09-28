@@ -1,0 +1,6 @@
+extension/js/*.js
+extension/manifest.json
+
+node_modules/
+.idea/
+*.js.map
